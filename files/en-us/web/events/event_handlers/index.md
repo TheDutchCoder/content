@@ -34,8 +34,7 @@ Below we show how to set a simple `greet()` function for the `click` event using
 const btn = document.querySelector('button');
 
 function greet(event){
-  // print the event object to console
-  console.log('greet:', arguments)
+  console.log('greet:', arguments); // print the event object to console
 }
 
 btn.onclick = greet;
@@ -55,8 +54,7 @@ Below we show how a simple `greet()` function can be set as a listener/event han
 const btn = document.querySelector('button');
 
 function greet(event){
-  // print the event object to console
-  console.log('greet:', arguments)
+  console.log('greet:', arguments); // print the event object to console
 }
 
 btn.addEventListener('click', greet);
@@ -73,10 +71,9 @@ This is done by passing the same {{domxref("AbortSignal")}} to the {{domxref("Ev
 ```js
 const controller = new AbortController();
 
-btn.addEventListener('click', function(event) {
-  // print the event object to console
-  console.log('greet:', arguments)
-  }, { signal: controller.signal }); // pass an AbortSignal to this handler
+btn.addEventListener('click', function(event){
+  console.log('greet:', arguments); // print the event object to console
+}, { signal: controller.signal }); // pass an AbortSignal to this handler
 ```
 
 Then the event handler created by the code above can be removed like this:
